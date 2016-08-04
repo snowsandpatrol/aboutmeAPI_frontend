@@ -47,14 +47,27 @@ myApp.controller('linksController', ['$scope', '$log', '$http', function($scope,
 
 myApp.controller('projectsController', ['$scope', '$log', '$routeParams', '$http', function($scope, $log, $routeParams, $http) {
     
-    $scope.num = $routeParams.num || 1;
+    $scope.num = $routeParams.num || "";
 //    $log.log($scope);
     console.log('Projects');
-
-                                        
+//
+//    $scope.getallProject = function() {
+//            $http({
+//            method : 'GET',            
+//            url : 'https://quiet-headland-89346.herokuapp.com/project'
+//        }).then(function successCallback(response) {
+//            $scope.project = response.data;
+//            console.log(response.data)
+//        }, function errorCallback(response) {
+//            console.log('dont work')
+//
+//        });
+//    };
+    
+//    $scope.getProject = function() {
             $http({
             method : 'GET',            
-            url : 'https://quiet-headland-89346.herokuapp.com/project'
+            url : 'https://quiet-headland-89346.herokuapp.com/project/' + $scope.num
         }).then(function successCallback(response) {
             $scope.project = response.data;
             console.log(response.data)
@@ -62,19 +75,19 @@ myApp.controller('projectsController', ['$scope', '$log', '$routeParams', '$http
             console.log('dont work')
 
         });
-
-    
+//    };
+        
 }]);
 
 myApp.controller('educationController', ['$scope', '$log', '$routeParams', '$http', function($scope, $log, $routeParams, $http) {
     
-    $scope.num = $routeParams.num || 1;
+    $scope.num = $routeParams.num || "";
 //    $log.log($scope);
     console.log('Education');
 
             $http({
             method : 'GET',            
-            url : 'https://quiet-headland-89346.herokuapp.com/education'
+            url : 'https://quiet-headland-89346.herokuapp.com/education/'  + $scope.num
         }).then(function successCallback(response) {
             $scope.education = response.data;
             console.log(response.data)
@@ -111,13 +124,13 @@ myApp.controller('skillsController', ['$scope', '$log', '$http', function($scope
 
 myApp.controller('workController', ['$scope', '$log', '$routeParams', '$http', function($scope, $log, $routeParams, $http) {
     
-    $scope.num = $routeParams.num || 1;
+    $scope.num = $routeParams.num || "";
 //    $log.log($scope);
     console.log('Work');
     
             $http({
             method : 'GET',            
-            url : 'https://quiet-headland-89346.herokuapp.com/work'
+            url : 'https://quiet-headland-89346.herokuapp.com/work/' + $scope.num
         }).then(function successCallback(response) {
             $scope.work = response.data;
             console.log(response.data)

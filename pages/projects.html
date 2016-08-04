@@ -1,5 +1,19 @@
-<h1>This is projects.</h1>
-<h3>Scope route value (on projects page): {{ num }}</h3>
+<h1>Projects</h1>
+<h3>Page: {{ num }} </h3>
+
+<p>
+<a href="#/">Back to: Main Page | <a href="#/projects/"> Projects All </a> </a>
+</p>
+
+<hr/>
+Project Page: 
+<a href="#/project/1" ng-class="{'bg-primary': num === '1'}"> 1 </a> |
+<a href="#/project/2" ng-class="{'bg-primary': num === '2'}"> 2 </a> |
+<a href="#/project/3" ng-class="{'bg-primary': num === '3'}"> 3 </a> |
+<a href="#/project/4" ng-class="{'bg-primary': num === '4'}"> 4 </a> |
+<a href="#/project/5" ng-class="{'bg-primary': num === '5'}"> 5 </a> |
+<hr/>
+
 
 <h3 ng-repeat="project in project">
 Project Description: {{project.project_description}}
@@ -7,5 +21,4 @@ Project Description: {{project.project_description}}
 Project Link: {{project.project_link }}
 </br>
 Project Name: {{project.project_name}}
-
 </h3>

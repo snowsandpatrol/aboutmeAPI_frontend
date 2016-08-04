@@ -1,12 +1,29 @@
-<h1>This is Education.</h1>
-<h3>Scope route value (on education page): {{ num }}</h3>
+<h1>Education</h1>
 
-<h3 ng-repeat="edu in education">
-Certification: {{ edu.certification}}
-</br>
-Institution Name: {{edu.institution_name }}
-</br>
-End Date: {{edu.end_date }}
-</br>
-Start Date: {{edu.start_date }}
+<h3>Page: {{ num }}</h3>
+
+<p>
+<a href="#/">Back to Main Page | <a href="#/education/"> Education All </a> </a>
+</p>
+
+<hr/>
+Education Page: 
+<a href="#/education/1" ng-class="{'bg-primary': num === '1'}"> 1 </a> |
+<a href="#/education/2" ng-class="{'bg-primary': num === '2'}"> 2 </a> |
+<a href="#/education/3" ng-class="{'bg-primary': num === '3'}"> 3 </a> |
+<a href="#/education/4" ng-class="{'bg-primary': num === '4'}"> 4 </a> |
+<a href="#/education/5" ng-class="{'bg-primary': num === '5'}"> 5 </a> |
+<hr/>
+
+
+<h3 ng-repeat="education in education">
+    <span>
+        Certification: {{ education.certification}}
+        </br>
+        Institution Name: {{education.institution_name }}
+        </br>
+        End Date: {{education.end_date }}
+        </br>
+        Start Date: {{education.start_date }}
+    </span>
 </h3>
